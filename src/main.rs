@@ -18,8 +18,8 @@ fn submit(url: String) -> RawHtml<String> {
     let mut splitted: Vec<&str> = decoded.split("url=").collect();
     let hash_code = hashing::generate_hash();
     hashing::add_link(hash_code.to_string(), splitted[1].to_string());
-    let href = format!("<a href = http://127.0.0.1:8000/{}>Der kurze Link</a>", hash_code.to_string());
-    let link = format!("<p>http://127.0.0.1:8000/{}</p>", hash_code.to_string());
+    let href = format!("<a href = https://stinkt.tech/{}>Der kurze Link</a>", hash_code.to_string());
+    let link = format!("<p>https://stinkt.tech/{}</p>", hash_code.to_string());
     RawHtml(href.as_str().to_owned() + link.as_str())
 }
 
